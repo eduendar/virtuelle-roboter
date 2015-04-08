@@ -1,0 +1,19 @@
+def distance(x,y,z):
+    
+    if (startx == 0 and starty == 0 and startz ==0):
+        
+        startx == x
+        starty == y
+        startz == z
+    
+    deltax = startx - x
+    deltay = starty - y
+    deltaz = startz - z
+    
+    if ((deltay > 0.1) or (deltay < -0.1) or (deltaz > 0.1) or (deltaz < -0.1) or (deltax < -0.05)):
+        startx = x
+        starty = y
+        startz = z
+    
+    elif (deltax >= 0.40):
+        return 1
