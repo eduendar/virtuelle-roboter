@@ -2,9 +2,9 @@ def distance(x,y,z):
     
     if (startx == 0 and starty == 0 and startz ==0):
         
-        startx == x
-        starty == y
-        startz == z
+        startx = x
+        starty = y
+        startz = z
     
     deltax = startx - x
     deltay = starty - y
