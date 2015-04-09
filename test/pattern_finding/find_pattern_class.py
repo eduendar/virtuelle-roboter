@@ -4,7 +4,7 @@ class Pattern:
 	coords = []
 	possible_pattern = []
 	
-	AllPatterns = [] #fütter array mit patterns
+	AllPatterns = [] #fuetter array mit patterns
 	# mögliches array AllPatterns[0] =
 	#0 0 0
 	#1 1 1
@@ -14,6 +14,8 @@ class Pattern:
 	FirstY = 0
 	FirstZ = 0
 	
+	#coordinaten muessen als array uebergeben werden
+	#coords[] = tupel
 	def __init__(self,coords):
 		self.coords = coords
 		self.FirstX = coords[0](1)
@@ -27,7 +29,7 @@ class Pattern:
 	#0 0 0
 	#1 1 1
 	#0 0 0
-	#wird zunächst nur die erste SPALTE erstellt, dann die zweite, ...
+	#wird zunaechst nur die erste SPALTE erstellt, dann die zweite, ...
 	def createPossiblePattern(self):		
 		length = len(self.coords)
 		dr_len = int(length/3)
@@ -49,7 +51,7 @@ class Pattern:
 		xLast = 0
 		
 		for tupel in array:
-			#schau nur an, was sich am meisten geändert hat
+			#schau nur an, was sich am meisten geaendert hat
 			xArr += tupel(1) # > 0 ? links rum  <0 rechts rum
 			yArr += tupel(2)
 			zArr += tupel(3)
@@ -63,9 +65,9 @@ class Pattern:
 		detlaZ_neg = self.FirstZ - zArr
 		detlaZ_pos = self.FirstZ + zArr
 		
-		#prüfe ob pos/neg wert gräßer/kleiner als varianz ist
-		#wenn ja -> setze 1 im möglichen pattern
-		#-1 für hoch/runter links/rechts vor/zurück fehlt noch
+		#pruefe ob pos/neg wert groeßer/kleiner als varianz ist
+		#wenn ja -> setze 1 im moeglichen pattern
+		#-1 fuer hoch/runter links/rechts vor/zurueck fehlt noch
 		#erstmal so testen :P
 		if deltaX_pos > self.varianz or deltaX_neg < self.varianz:
 			self.possible_pattern[0][0] = 1
@@ -81,7 +83,7 @@ class Pattern:
 			self.possible_pattern[2][0] = 0	
 		
 	#eigentliche methode, die aufgerufen wird
-	#rückgabewerte fehlen noch
+	#rueckgabewerte fehlen noch
 	def findPattern(self):
 		self.createPossiblePattern()
 		found = false;
