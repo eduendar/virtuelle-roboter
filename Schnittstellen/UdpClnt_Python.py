@@ -1,4 +1,5 @@
 import socket
+import thread
 
 class UdpClnt:
 	
@@ -77,5 +78,3 @@ class UdpClnt:
 	#Simulation abbrechen
 	def sendInterrupt(self):
 		self.send("InterruptBefehl")
-		
-	
